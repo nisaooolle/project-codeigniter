@@ -13,11 +13,12 @@
         padding: 2px 10px 2px 10px;
         color: white;
         font-size: 15px;
+        margin-left: 7%;
     }
 
     .edit {
         padding: 2px 10px 2px 10px;
-        margin-right: 10px;
+        margin-left: 25%;
         color: white;
         font-size: 15px;
     }
@@ -106,11 +107,9 @@
                     <thead>
                         <tr>
                             <th scope="col" class="text-center">No</th>
-                            <th scope="col" class="text-center">Nama Siswa</th>
-                            <th scope="col" class="text-center">Nisn</th>
+                            <th scope="col" class="text-center">Nama Guru</th>
+                            <th scope="col" class="text-center">Nik</th>
                             <th scope="col" class="text-center">Gender</th>
-                            <th scope="col" class="text-center">TTL</th>
-                            <th scope="col" class="text-center">Kelas</th>
                             <th scope="col" class="text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -121,31 +120,24 @@
                                 <th data-cell="No" class="text-center" scope="row">
                                     <?php echo $no ?>
                                 </th>
-                                <td data-cell="Nama Siswa" class="text-center">
-                                    <?php echo $row->nama_siswa; ?>
+                                <td data-cell="Nama Guru" class="text-center">
+                                    <?php echo $row->nama_guru; ?>
                                 </td>
-                                <td data-cell="Nisn" class="text-center">
-                                    <?php echo $row->nisn; ?>
+                                <td data-cell="Nik" class="text-center">
+                                    <?php echo $row->nik; ?>
                                 </td>
                                 <td data-cell="Gender" class="text-center">
                                     <?php echo $row->gender; ?>
                                 </td>
-                                <td data-cell="TTL" class="text-center">
-                                    <?php echo $row->ttl; ?>
+                                <td data-cell="Aksi" class="aksi">
+                                    <a href="<?php echo base_url('admin/update_guru/') . $row->id ?>" type="button" id="PopoverCustomT-1" class="btn btn-success btn-sm edit">Edit</a>
+                                    <button onclick="hapus(<?php echo $row->id ?>)" type="button" id="PopoverCustomT-1" class="btn btn-danger btn-sm hapus">Delete</button>
                                 </td>
-                                <td data-cell="Kelas" class="text-center">
-                                    <?php echo $row->kelas . ' ' . $row->jurusan; ?>
-                                </td>
-                                <td data-cell="Aksi" class="text-center aksi">
-                                    <a href="<?php echo base_url('admin/update/') . $row->id ?>" type="button" id="PopoverCustomT-1" class="btn btn-success btn-sm edit">Edit</a>
-                                    <button onclick="hapus(<?php echo $row->id ?>)" type="button" id="PopoverCustomT-1" class="btn btn-danger btn-sm hapus">Hapus</button>
-                                </td>
-
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
-                <a href="<?php echo base_url('admin/tambah_siswa/')?>" type="button" id="PopoverCustomT-1" class="btn btn-success btn-sm edit">create</a>
+                <a href="<?php echo base_url('admin/tambah_guru/')?>" type="button" id="PopoverCustomT-1" class="btn btn-success btn-sm edit">create</a>
             </div>
         </div>
     </div>
@@ -153,7 +145,7 @@
         function hapus(id) {
             var yes = confirm('Yakin di hapus?');
             if (yes == true) {
-                window.location.href = "<?php echo base_url('admin/hapus_siswa/') ?>" + id
+                window.location.href = "<?php echo base_url('admin/hapus_guru/') ?>" + id
             }
         }
     </script>

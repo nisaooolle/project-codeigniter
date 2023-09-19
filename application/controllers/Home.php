@@ -13,6 +13,7 @@ class Home extends CI_Controller
 	{
 		$data['user'] = $this->m_model->get_data('admin')->result();
 		$data['siswa'] = $this->m_model->get_data('siswa')->result();
+		$data['guru'] = $this->m_model->get_data('guru')->result();
 		$data['title'] = 'Home Page';
 		$this->load->view('home', $data);
 	}

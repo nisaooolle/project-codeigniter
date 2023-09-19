@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dasboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
@@ -441,15 +443,15 @@ td .status{
         <div class="sidebar-menu">
           <ul>
             <li>
-              <a href="#" class="active">
+              <a href="dasboard" class="active">
                 <span class="fas fa-tachometer-alt"></span>
                 <span>Dashboard</span>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="siswa">
                 <span class="fas fa-users" ></span>
-                <span>Customers</span>
+                <span>Siswa</span>
               </a>
             </li>
             <li>
@@ -551,186 +553,6 @@ td .status{
           </div>
 
         </div>
-
-        <div class="recent-grid">
-          <div class="projects">
-            <div class="card">
-              <div class="card-header">
-                <h2>Recent Projects</h2>
-                <button>See all <span class="fas fa-arrow-right"></span> </button>
-              </div>
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table width="100%">
-                  <thead>
-                    <tr>
-                      <td>Project Title</td>
-                      <td>Department</td>
-                      <td>Status</td>
-
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Website</td>
-                      <td>Frontend</td>
-                      <td>
-                        <span class="status purple"></span>
-                        Review
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Website</td>
-                      <td>Frontend</td>
-                      <td>
-                        <span class="status orange"></span>
-                        Pending
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Website</td>
-                      <td>Frontend</td>
-                      <td>
-                        <span class="status pink"></span>
-                        In Progress
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Website</td>
-                      <td>Frontend</td>
-                      <td>
-                        <span class="status purple"></span>
-                        Review
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Website</td>
-                      <td>Frontend</td>
-                      <td>
-                        <span class="status pink"></span>
-                        In Progress
-                      </td>
-                    </tr>
-                  </tbody>
-
-                </table>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-          <div class="customers">
-            <div class="card">
-              <div class="card-header">
-                  <h2>New Customers</h2>
-                  <button>See all <span class="fas fa-arrow-right"></span> </button>
-              </div>
-              <div class="card-body">
-                <div class="customer">
-                  <div class="info">
-                    <img src="https://bit.ly/3bvT89p" height="40px" width="40px" alt="customer">
-                    <div>
-                      <h4>Malik Abushabab</h4>
-                      <small>CEO</small>
-                    </div>
-                  </div>
-                  <div class="contact">
-                      <span class="fas fa-user-circle"></span>
-                      <span class="fas fa-comment"></span>
-                      <span class="fas fa-phone-alt"></span>
-                    </div>
-                </div>
-                <div class="customer">
-                  <div class="info">
-                    <img src="https://bit.ly/3bvT89p" height="40px" width="40px" alt="customer">
-                    <div>
-                      <h4>Malik Abushabab</h4>
-                      <small>CEO</small>
-                    </div>
-                  </div>
-                  <div class="contact">
-                      <span class="fas fa-user-circle"></span>
-                      <span class="fas fa-comment"></span>
-                      <span class="fas fa-phone-alt"></span>
-                    </div>
-                </div>
-                <div class="customer">
-                  <div class="info">
-                    <img src="https://bit.ly/3bvT89p" height="40px" width="40px" alt="customer">
-                    <div>
-                      <h4>Malik Abushabab</h4>
-                      <small>CEO</small>
-                    </div>
-                  </div>
-                  <div class="contact">
-                      <span class="fas fa-user-circle"></span>
-                      <span class="fas fa-comment"></span>
-                      <span class="fas fa-phone-alt"></span>
-                    </div>
-                </div>
-                <div class="customer">
-                  <div class="info">
-                    <img src="https://bit.ly/3bvT89p" height="40px" width="40px" alt="customer">
-                    <div>
-                      <h4>Malik Abushabab</h4>
-                      <small>CEO</small>
-                    </div>
-                  </div>
-                  <div class="contact">
-                      <span class="fas fa-user-circle"></span>
-                      <span class="fas fa-comment"></span>
-                      <span class="fas fa-phone-alt"></span>
-                    </div>
-                </div>
-                <div class="customer">
-                  <div class="info">
-                    <img src="https://bit.ly/3bvT89p" height="40px" width="40px" alt="customer">
-                    <div>
-                      <h4>Malik Abushabab</h4>
-                      <small>CEO</small>
-                    </div>
-                  </div>
-                  <div class="contact">
-                      <span class="fas fa-user-circle"></span>
-                      <span class="fas fa-comment"></span>
-                      <span class="fas fa-phone-alt"></span>
-                    </div>
-                </div>
-                <div class="customer">
-                  <div class="info">
-                    <img src="https://bit.ly/3bvT89p" height="40px" width="40px" alt="customer">
-                    <div>
-                      <h4>Malik Abushabab</h4>
-                      <small>CEO</small>
-                    </div>
-                  </div>
-                  <div class="contact">
-                      <span class="fas fa-user-circle"></span>
-                      <span class="fas fa-comment"></span>
-                      <span class="fas fa-phone-alt"></span>
-                    </div>
-                </div>
-                <div class="customer">
-                  <div class="info">
-                    <img src="https://bit.ly/3bvT89p" height="40px" width="40px" alt="customer">
-                    <div>
-                      <h4>Malik Abushabab</h4>
-                      <small>CEO</small>
-                    </div>
-                  </div>
-                  <div class="contact">
-                      <span class="fas fa-user-circle"></span>
-                      <span class="fas fa-comment"></span>
-                      <span class="fas fa-phone-alt"></span>
-                    </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-          
-        </div>  
 
       </main>
     </div>
