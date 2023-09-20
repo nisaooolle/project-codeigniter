@@ -159,7 +159,7 @@ ul li a:hover{
 
 .content .cn a{
     text-decoration: none;
-    color: #000;
+    color: #fff;
     transition: .3s ease;
 }
 
@@ -179,7 +179,7 @@ ul li a:hover{
     <div class="main">
         <div class="navbar">
             <div class="icon">
-                <h2 class="logo">PraRoz</h2>
+                <h2 class="logo">MYweb</h2>
             </div>
 
             <div class="menu">
@@ -192,10 +192,10 @@ ul li a:hover{
                 </ul>
             </div>
 
-            <div class="search">
+            <!-- <div class="search">
                 <input class="srch" type="search" name="" placeholder="Type To text">
                 <a href="#"> <button class="btn">Search</button></a>
-            </div>
+            </div> -->
 
         </div> 
         <div class="content">

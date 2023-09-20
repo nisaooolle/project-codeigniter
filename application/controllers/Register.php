@@ -37,4 +37,5 @@ class Register extends CI_Controller{
           redirect('auth');
       }
   }
+  
 }

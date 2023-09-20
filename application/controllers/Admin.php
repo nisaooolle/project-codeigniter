@@ -20,16 +20,22 @@ class Admin extends CI_Controller
   // untuk menampilkan folder admin/index
   public function dasboard()
     {
-      $this->load->view('admin/dasboard');
+      $data['siswa'] = $this->m_model->get_data('siswa')->num_rows();
+      $data['guru'] = $this->m_model->get_data('guru')->num_rows();
+      $this->load->view('admin/dasboard', $data);
     }
 
   public function siswa()
   {
+    $data['siswa'] = $this->m_model->get_data('siswa')->num_rows();
+    $data['guru'] = $this->m_model->get_data('guru')->num_rows();
     $data['result'] = $this->m_model->getData();
     $this->load->view('admin/siswa', $data);
   }
   public function guru()
   {
+    $data['siswa'] = $this->m_model->get_data('siswa')->num_rows();
+    $data['guru'] = $this->m_model->get_data('guru')->num_rows();
     $data['result'] = $this->m_model->getDataGuru();
     $this->load->view('admin/guru', $data);
   }
@@ -51,6 +57,21 @@ class Admin extends CI_Controller
     ];
     $this->m_model->tambah_data('siswa', $data);
     redirect(base_url('admin/siswa'));
+  }
+  public function tambah_guru()
+  {
+   $data['guru'] = $this->m_model->get_data('guru')->result();
+        $this->load->view('admin/tambah_guru',$data);
+  }
+  public function aksi_tambah_guru()
+  {
+    $data = [
+      'nama_guru' => $this->input->post('nama'),
+      'nik' => $this->input->post('nik'),
+      'gender' => $this->input->post('gender'),
+    ];
+    $this->m_model->tambah_data('guru', $data);
+    redirect(base_url('admin/guru'));
   }
 
   public function update($id){

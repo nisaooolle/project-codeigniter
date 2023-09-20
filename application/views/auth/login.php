@@ -19,7 +19,7 @@
 section {
   position: relative;
   min-height: 100vh;
-  background-color: #f8dd30;
+  background:linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(1.jpg) ;
   display: flex;
   justify-content: center;
   align-items: center;
