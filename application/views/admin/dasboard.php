@@ -13,7 +13,7 @@
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
 
   :root {
-    --main-color: #11101d;
+    --main-color: rgba(9, 81, 121, 1);
     --color-dark: #1D2231;
     --text-grey: #8390A2;
   }
@@ -491,13 +491,60 @@
       grid-template-columns: 100%;
     }
   }
+
+  .tasis {
+    margin-left: 40%;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-weight: bold;
+  }
+
+  .tasiss {
+    margin-left: 40%;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-weight: bold;
+  }
+
+  .app-main__outer1 {
+    margin: 3rem 2rem 6rem;
+    width: 65%;
+    margin-top: -25%;
+    margin-left: 30%;
+    background-color: rgba(9, 81, 121, 1);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  }
+
+  .app-main__outer {
+    margin: 3rem 2rem 6rem;
+    width: 65%;
+    margin-left: 30%;
+    background-color: rgba(9, 81, 121, 1);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #ffffff;
+     /* Ganti warna latar belakang sesuai keinginan Anda */
+  }
+
+  tbody tr:nth-child(odd) {
+    /* background-color:rgba(9, 81, 121, 1); */
+    /* color: #fff; */
+    /* Ganti warna latar belakang sesuai keinginan Anda */
+    color: white;
+  }
 </style>
 
-<body>
+<body style="background: #f1f5f9;">
   <input type="checkbox" id="nav-toggle">
   <div class="sidebar">
     <div class="sidebar-brand">
-      <h1> <span class="fab fa-asymmetrik"> </span> <span>Aizcar</span>
+      <h1> <span class="fab fa-asymmetrik"> </span> <span style="font-family: 'Times New Roman', Times, serif;">Sekolah</span>
       </h1>
     </div>
 
@@ -534,24 +581,19 @@
 
   <div class="main-content">
     <header>
-      <h2>
+      <h2 style="color: rgba(9, 81, 121, 1); font-family: 'Times New Roman', Times, serif;">
         <label for="nav-toggle">
           <span class="fas fa-bars"></span>
         </label>
         Dashboard
       </h2>
-
-      <!-- <a href="<?php echo base_url('auth/logout'); ?>"  class="btn btn-sm btn-primary">
-        Logout
-      </a> -->
-
     </header>
 
     <main>
       <div class="cards">
         <div class="card-single">
           <div>
-            <h1><?php echo $siswa ?></h1>
+            <h1 style="color: rgba(9, 81, 121, 1);"><?php echo $siswa ?></h1>
             <span>Siswa</span>
           </div>
           <div>
@@ -560,7 +602,7 @@
         </div>
         <div class="card-single">
           <div>
-            <h1><?php echo $guru ?></h1>
+            <h1 style="color: rgba(9, 81, 121, 1);"><?php echo $guru ?></h1>
             <span>Guru</span>
           </div>
           <div>
@@ -569,11 +611,11 @@
         </div>
         <div class="card-single">
           <div>
-            <h1>15</h1>
-            <span>Orders</span>
+            <h1 style="color: rgba(9, 81, 121, 1);"><?php echo $admin ?></h1>
+            <span>Admin</span>
           </div>
           <div>
-            <span class="fas fa-shopping-cart"></span>
+            <span class="fa-solid fa-user"></span>
           </div>
         </div>
         <div class="card-single">
@@ -590,8 +632,78 @@
 
     </main>
   </div>
-
-
+  <div class="app-main__outer1">
+    <h2 class="tasis">Tabel Siswa</h2>
+    <table class="table">
+      <thead>
+        <tr style="color:black; background: white">
+          <th scope="col" class="text-center">No</th>
+          <th scope="col" class="text-center">Nama Siswa</th>
+          <th scope="col" class="text-center">Nisn</th>
+          <th scope="col" class="text-center">Gender</th>
+          <th scope="col" class="text-center">TTL</th>
+          <th scope="col" class="text-center">Kelas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php $no = 0;
+        foreach ($sis as $row) : $no++ ?>
+          <tr>
+            <th data-cell="No" class="text-center" scope="row">
+              <?php echo $no ?>
+            </th>
+            <th data-cell="Nama Siswa" class="text-center">
+              <?php echo $row->nama_siswa; ?>
+            </th>
+            <th data-cell="Nisn" class="text-center">
+              <?php echo $row->nisn; ?>
+            </th>
+            <th data-cell="Gender" class="text-center">
+              <?php echo $row->gender; ?>
+            </th>
+            <th data-cell="TTL" class="text-center">
+              <?php echo $row->ttl; ?>
+            </th>
+            <th data-cell="Kelas" class="text-center" style="margin-left: 30%;">
+              <?php echo $row->kelas . ' ' . $row->jurusan; ?>
+            </th>
+          </tr>
+        <?php endforeach; ?>
+      </tbody>
+    </table>
+  </div>
+  <div class="app-main__outer">
+    <h2 class="tasiss">Tabel Guru</h2>
+    <table class="table">
+      <thead>
+        <tr style="color:black; background: white">
+          <th scope="col" class="text-center">No</th>
+          <th scope="col" class="text-center">Nama Guru</th>
+          <th scope="col" class="text-center">Nik</th>
+          <th scope="col" class="text-center">Gender</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php $no = 0;
+        foreach ($gur as $row) : $no++ ?>
+          <tr>
+            <th data-cell="No" class="text-center" scope="row">
+              <?php echo $no ?>
+            </th>
+            <th data-cell="Nama Guru" class="text-center">
+              <?php echo $row->nama_guru; ?>
+            </th>
+            <th data-cell="Nik" class="text-center">
+              <?php echo $row->nik; ?>
+            </th>
+            <th data-cell="Gender" class="text-center" style="margin-left: 35%;">
+              <?php echo $row->gender; ?>
+            </th>
+          </tr>
+        <?php endforeach; ?>
+      </tbody>
+    </table>
+  </div>
 </body>
 
 </html>

@@ -30,16 +30,8 @@
         width: 65px;
         font-size: 15px;
         /* margin-bottom: 70px; */
-        margin-top: -80px;
+        margin-top: -5px;
     }
-
-    .table {
-        margin: 3rem 2rem 6rem;
-        width: 75%;
-        margin-top: -30%;
-        margin-left: 15%;
-    }
-
     @media (max-width: 600px) {
 
         .edit {
@@ -100,7 +92,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
 
     :root {
-        --main-color: #11101d;
+        --main-color: rgba(9, 81, 121, 1);
         --color-dark: #1D2231;
         --text-grey: #8390A2;
     }
@@ -358,6 +350,7 @@
 
     table {
         border-collapse: collapse;
+        margin-right: 30px;
     }
 
     thead tr {
@@ -578,15 +571,33 @@
             grid-template-columns: 100%;
         }
     }
+    .app-main__outer {
+    margin: 3rem 2rem 6rem;
+    width: 65%;
+    margin-left: 30%;
+    margin-top: -25%;
+    background-color: rgba(9, 81, 121, 1);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  }
+  tbody tr:nth-child(even) {
+    background-color: #ffffff;
+     /* Ganti warna latar belakang sesuai keinginan Anda */
+  }
+
+  tbody tr:nth-child(odd) {
+    /* Ganti warna latar belakang sesuai keinginan Anda */
+    color: white;
+  }
 </style>
 
 <body class="body">
     <div class="sidebar">
         <div class="sidebar-brand">
-            <h1> <span class="fab fa-asymmetrik"> </span> <span>Aizcar</span>
+        <h1> <span class="fab fa-asymmetrik"> </span> <span style="font-family: 'Times New Roman', Times, serif;">Sekolah</span>
             </h1>
         </div>
-
         <div class="sidebar-menu">
             <ul>
                 <li>
@@ -619,7 +630,7 @@
     </div>
     <div class="main-content">
         <header>
-            <h2>
+            <h2 style="color: rgba(9, 81, 121, 1); font-family: 'Times New Roman', Times, serif;">
                 <label for="nav-toggle">
                     <span class="fas fa-bars"></span>
                 </label>
@@ -631,7 +642,7 @@
             <div class="cards">
                 <div class="card-single">
                     <div>
-                        <h1><?php echo $siswa ?></h1>
+                        <h1 style="color: rgba(9, 81, 121, 1);"><?php echo $siswa ?></h1>
                         <span>Siswa</span>
                     </div>
                     <div>
@@ -640,7 +651,7 @@
                 </div>
                 <div class="card-single">
                     <div>
-                        <h1><?php echo $guru ?></h1>
+                        <h1 style="color: rgba(9, 81, 121, 1);"><?php echo $guru ?></h1>
                         <span>Guru</span>
                     </div>
                     <div>
@@ -649,11 +660,11 @@
                 </div>
                 <div class="card-single">
                     <div>
-                        <h1>15</h1>
-                        <span>Orders</span>
+                        <h1 style="color: rgba(9, 81, 121, 1);"><?php echo $admin ?></h1>
+                        <span>Admin</span>
                     </div>
                     <div>
-                        <span class="fas fa-shopping-cart"></span>
+                        <span class="fa-solid fa-user"></span>
                     </div>
                 </div>
                 <div class="card-single">
@@ -670,17 +681,11 @@
 
         </main>
     </div>
-    <div class="app-theme-white body-tabs-shadow fixed-sidebar" class="siswa">
-        <div class="ui-theme-settings">
-            <button type="button" id="TooltipDemo" class="btn-open-options btn btn-warning">
-                <i class="fa fa-cog fa-w-16 fa-spin fa-2x"></i>
-            </button>
-        </div>
         <div class="app-main">
             <div class="app-main__outer">
-                <table class="table table-striped">
+                <table class="table">
                     <thead>
-                        <tr>
+                        <tr style="color:black; background: white">
                             <th scope="col" class="text-center">No</th>
                             <th scope="col" class="text-center">Nama Guru</th>
                             <th scope="col" class="text-center">Nik</th>
@@ -695,24 +700,24 @@
                                 <th data-cell="No" class="text-center" scope="row">
                                     <?php echo $no ?>
                                 </th>
-                                <td data-cell="Nama Guru" class="text-center">
+                                <th data-cell="Nama Guru" class="text-center">
                                     <?php echo $row->nama_guru; ?>
-                                </td>
-                                <td data-cell="Nik" class="text-center">
+                                </th>
+                                <th data-cell="Nik" class="text-center">
                                     <?php echo $row->nik; ?>
-                                </td>
-                                <td data-cell="Gender" class="text-center">
+                                </th>
+                                <th data-cell="Gender" class="text-center">
                                     <?php echo $row->gender; ?>
-                                </td>
-                                <td data-cell="Aksi" class="aksi">
+                                </th>
+                                <th data-cell="Aksi" class="aksi">
                                     <a href="<?php echo base_url('admin/update_guru/') . $row->id ?>" type="button" id="PopoverCustomT-1" class="btn btn-success btn-sm edit">Edit</a>
                                     <button onclick="hapus(<?php echo $row->id ?>)" type="button" id="PopoverCustomT-1" class="btn btn-danger btn-sm hapus">Delete</button>
-                                </td>
+                                </th>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
-                <a href="<?php echo base_url('admin/tambah_guru/') ?>" type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm create">create</a>
+                <a href="<?php echo base_url('admin/tambah_guru/') ?>" type="button" id="PopoverCustomT-1" class="btn btn-info btn-sm create">create</a>
             </div>
         </div>
     </div>

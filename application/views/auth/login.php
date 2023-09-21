@@ -2,201 +2,180 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
 </head>
 <style>
-  @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
-section {
-  position: relative;
-  min-height: 100vh;
-  background:linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(1.jpg) ;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-section .container {
-  position: relative;
-  width: 800px;
-  height: 500px;
-  background: #fff;
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-section .container .user {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-}
-
-section .container .user .imgBx {
-  position: relative;
-  width: 50%;
-  height: 100%;
-  background: #ff0;
-  transition: 0.5s;
-}
-
-section .container .user .imgBx img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-section .container .user .formBx {
-  position: relative;
-  width: 50%;
-  height: 100%;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-  transition: 0.5s;
-}
-
-section .container .user .formBx form h2 {
-  font-size: 18px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-align: center;
-  width: 100%;
-  margin-bottom: 10px;
-  color: #555;
-}
-
-section .container .user .formBx form input {
-  position: relative;
-  width: 100%;
-  padding: 10px;
-  background: #f5f5f5;
-  color: #333;
-  border: none;
-  outline: none;
-  box-shadow: none;
-  margin: 8px 0;
-  font-size: 14px;
-  letter-spacing: 1px;
-  font-weight: 300;
-}
-
-section .container .user .formBx form input[type='submit'] {
-  max-width: 100px;
-  background: #677eff;
-  color: #fff;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  transition: 0.5s;
-}
-
-section .container .user .formBx form .signup {
-  position: relative;
-  margin-top: 20px;
-  font-size: 12px;
-  letter-spacing: 1px;
-  color: #555;
-  text-transform: uppercase;
-  font-weight: 300;
-}
-
-section .container .user .formBx form .signup a {
-  font-weight: 600;
-  text-decoration: none;
-  color: #677eff;
-}
-
-section .container .signupBx {
-  pointer-events: none;
-}
-
-section .container.active .signupBx {
-  pointer-events: initial;
-}
-
-section .container .signupBx .formBx {
-  left: 100%;
-}
-
-section .container.active .signupBx .formBx {
-  left: 0;
-}
-
-section .container .signupBx .imgBx {
-  left: -100%;
-}
-
-section .container.active .signupBx .imgBx {
-  left: 0%;
-}
-
-section .container .signinBx .formBx {
-  left: 0%;
-}
-
-section .container.active .signinBx .formBx {
-  left: 100%;
-}
-
-section .container .signinBx .imgBx {
-  left: 0%;
-}
-
-section .container.active .signinBx .imgBx {
-  left: -100%;
-}
-
-@media (max-width: 991px) {
-  section .container {
-    max-width: 400px;
-  }
-
-  section .container .imgBx {
-    display: none;
-  }
-
-  section .container .user .formBx {
+  img {
     width: 100%;
   }
-}
+
+  .login {
+    height: 100vh;
+    width: 100%;
+    /* background: radial-gradient(#653d84, #332042); */
+    position: relative;
+  }
+
+  .login_box {
+    width: 1050px;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 1px 4px 22px -8px #0004;
+    display: flex;
+    overflow: hidden;
+  }
+
+  .login_box .left {
+    width: 41%;
+    height: 100%;
+    padding: 25px 25px;
+
+  }
+
+  .login_box .right {
+    width: 59%;
+    height: 100%
+  }
+
+  .left .top_link a {
+    color: #452A5A;
+    font-weight: 400;
+  }
+
+  .left .top_link {
+    height: 20px
+  }
+
+  .left .contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    height: 100%;
+    width: 73%;
+    margin: auto;
+  }
+
+  .left h3 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .left input {
+    border: none;
+    width: 80%;
+    margin: 15px 0px;
+    border-bottom: 1px solid #4f30677d;
+    padding: 7px 9px;
+    width: 100%;
+    overflow: hidden;
+    background: transparent;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .left {
+    background: linear-gradient(-45deg, #dcd7e0, #fff);
+  }
+
+  .submit {
+    border: none;
+    padding: 15px 70px;
+    border-radius: 8px;
+    display: block;
+    margin: auto;
+    margin-top: 120px;
+    background: #75C2F6;
+    color: #fff;
+    font-weight: bold;
+    -webkit-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
+    -moz-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
+    box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
+  }
+
+
+
+  .right {
+    background: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(9,81,121,1)) ,url(https://static.seattletimes.com/wp-content/uploads/2019/01/web-typing-ergonomics-1020x680.jpg);
+    color: #fff;
+    position: relative;
+  }
+
+  .right .right-text {
+    height: 100%;
+    position: relative;
+    transform: translate(0%, 45%);
+  }
+
+  .right-text h2 {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 500;
+  }
+
+  .right-text h5 {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 19px;
+    font-weight: 400;
+  }
+
+  .right .right-inductor {
+    position: absolute;
+    width: 70px;
+    height: 7px;
+    background: #fff0;
+    left: 50%;
+    bottom: 70px;
+    transform: translate(-50%, 0%);
+  }
+
+  .top_link img {
+    width: 28px;
+    padding-right: 7px;
+    margin-top: -3px;
+  }
 </style>
+
 <body>
-<section>
-    <div class="container">
-      <div class="user signinBx">
-        <div class="imgBx"><img src="https://raw.githubusercontent.com/WoojinFive/CSS_Playground/master/Responsive%20Login%20and%20Registration%20Form/img1.jpg" alt="" /></div>
-        <div class="formBx">
-          <form action="<?php echo base_url(); ?>Auth/aksi_login" method="post">
-            <h2>Sign in</h2>
-            <input type="email" name="email" placeholder="Email Address" />
-            <input type="password" name="password" placeholder="Password" />
-            <button type="submit" name="submit">Login</button>
-          </form>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <body>
+    <section class="login">
+      <div class="login_box">
+        <div class="left">
+          <div class="top_link"><a href="/project-codeigniter-3"><img src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download" alt="">Return home</a></div>
+          <div class="contact">
+            <form action="<?php echo base_url(); ?>Auth/aksi_login" method="post">
+              <h3>SIGN IN</h3>
+              <input type="email" name="email" placeholder="EMAIL">
+              <input type="password" name="password" placeholder="PASSWORD">
+              <button class="submit">LET'S GO</button>
+            </form>
+          </div>
+        </div>
+        <div class="right">
+          <div class="right-text">
+            <h2>LOGIN</h2>
+            <h5>TO GO TO THE NEXT PAGE </h5>
+          </div>
+          <div class="right-inductor"><img src="https://lh3.googleusercontent.com/fife/ABSRlIoGiXn2r0SBm7bjFHea6iCUOyY0N2SrvhNUT-orJfyGNRSMO2vfqar3R-xs5Z4xbeqYwrEMq2FXKGXm-l_H6QAlwCBk9uceKBfG-FjacfftM0WM_aoUC_oxRSXXYspQE3tCMHGvMBlb2K1NAdU6qWv3VAQAPdCo8VwTgdnyWv08CmeZ8hX_6Ty8FzetXYKnfXb0CTEFQOVF4p3R58LksVUd73FU6564OsrJt918LPEwqIPAPQ4dMgiH73sgLXnDndUDCdLSDHMSirr4uUaqbiWQq-X1SNdkh-3jzjhW4keeNt1TgQHSrzW3maYO3ryueQzYoMEhts8MP8HH5gs2NkCar9cr_guunglU7Zqaede4cLFhsCZWBLVHY4cKHgk8SzfH_0Rn3St2AQen9MaiT38L5QXsaq6zFMuGiT8M2Md50eS0JdRTdlWLJApbgAUqI3zltUXce-MaCrDtp_UiI6x3IR4fEZiCo0XDyoAesFjXZg9cIuSsLTiKkSAGzzledJU3crgSHjAIycQN2PH2_dBIa3ibAJLphqq6zLh0qiQn_dHh83ru2y7MgxRU85ithgjdIk3PgplREbW9_PLv5j9juYc1WXFNW9ML80UlTaC9D2rP3i80zESJJY56faKsA5GVCIFiUtc3EewSM_C0bkJSMiobIWiXFz7pMcadgZlweUdjBcjvaepHBe8wou0ZtDM9TKom0hs_nx_AKy0dnXGNWI1qftTjAg=w1920-h979-ft" alt=""></div>
         </div>
       </div>
-        <div class="imgBx"><img src="https://raw.githubusercontent.com/WoojinFive/CSS_Playground/master/Responsive%20Login%20and%20Registration%20Form/img2.jpg" alt="" /></div>
-    </div>
-  </section>
+    </section>
+  </body>
+
+</html>
 </body>
 
 </html>

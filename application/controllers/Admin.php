@@ -22,6 +22,9 @@ class Admin extends CI_Controller
     {
       $data['siswa'] = $this->m_model->get_data('siswa')->num_rows();
       $data['guru'] = $this->m_model->get_data('guru')->num_rows();
+      $data['admin'] = $this->m_model->get_data('admin')->num_rows();
+      $data['sis'] = $this->m_model->getData();
+      $data['gur'] = $this->m_model->getDataGuru();
       $this->load->view('admin/dasboard', $data);
     }
 
@@ -29,6 +32,7 @@ class Admin extends CI_Controller
   {
     $data['siswa'] = $this->m_model->get_data('siswa')->num_rows();
     $data['guru'] = $this->m_model->get_data('guru')->num_rows();
+    $data['admin'] = $this->m_model->get_data('admin')->num_rows();
     $data['result'] = $this->m_model->getData();
     $this->load->view('admin/siswa', $data);
   }
@@ -36,6 +40,7 @@ class Admin extends CI_Controller
   {
     $data['siswa'] = $this->m_model->get_data('siswa')->num_rows();
     $data['guru'] = $this->m_model->get_data('guru')->num_rows();
+    $data['admin'] = $this->m_model->get_data('admin')->num_rows();
     $data['result'] = $this->m_model->getDataGuru();
     $this->load->view('admin/guru', $data);
   }
