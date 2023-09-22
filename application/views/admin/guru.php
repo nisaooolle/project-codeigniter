@@ -32,6 +32,7 @@
         /* margin-bottom: 70px; */
         margin-top: -5px;
     }
+
     @media (max-width: 600px) {
 
         .edit {
@@ -571,31 +572,34 @@
             grid-template-columns: 100%;
         }
     }
-    .app-main__outer {
-    margin: 3rem 2rem 6rem;
-    width: 65%;
-    margin-left: 30%;
-    margin-top: -25%;
-    background-color: rgba(9, 81, 121, 1);
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-  }
-  tbody tr:nth-child(even) {
-    background-color: #ffffff;
-     /* Ganti warna latar belakang sesuai keinginan Anda */
-  }
 
-  tbody tr:nth-child(odd) {
-    /* Ganti warna latar belakang sesuai keinginan Anda */
-    color: white;
-  }
+    .app-main__outer {
+        margin: 3rem 2rem 6rem;
+        width: 65%;
+        margin-left: 30%;
+        margin-top: -25%;
+        background-color: rgba(9, 81, 121, 1);
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #ffffff;
+        /* Ganti warna latar belakang sesuai keinginan Anda */
+    }
+
+    tbody tr:nth-child(odd) {
+        /* Ganti warna latar belakang sesuai keinginan Anda */
+        color: white;
+    }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <body class="body">
     <div class="sidebar">
         <div class="sidebar-brand">
-        <h1> <span class="fab fa-asymmetrik"> </span> <span style="font-family: 'Times New Roman', Times, serif;">Sekolah</span>
+            <h1> <span class="fab fa-asymmetrik"> </span> <span style="font-family: 'Times New Roman', Times, serif;">Sekolah</span>
             </h1>
         </div>
         <div class="sidebar-menu">
@@ -681,52 +685,70 @@
 
         </main>
     </div>
-        <div class="app-main">
-            <div class="app-main__outer">
-                <table class="table">
-                    <thead>
-                        <tr style="color:black; background: white">
-                            <th scope="col" class="text-center">No</th>
-                            <th scope="col" class="text-center">Nama Guru</th>
-                            <th scope="col" class="text-center">Nik</th>
-                            <th scope="col" class="text-center">Gender</th>
-                            <th scope="col" class="text-center">Aksi</th>
+    <div class="app-main">
+        <div class="app-main__outer">
+            <table class="table">
+                <thead>
+                    <tr style="color:black; background: white">
+                        <th scope="col" class="text-center">No</th>
+                        <th scope="col" class="text-center">Nama Guru</th>
+                        <th scope="col" class="text-center">Nik</th>
+                        <th scope="col" class="text-center">Gender</th>
+                        <th scope="col" class="text-center">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $no = 0;
+                    foreach ($result as $row) : $no++ ?>
+                        <tr>
+                            <th data-cell="No" class="text-center" scope="row">
+                                <?php echo $no ?>
+                            </th>
+                            <th data-cell="Nama Guru" class="text-center">
+                                <?php echo $row->nama_guru; ?>
+                            </th>
+                            <th data-cell="Nik" class="text-center">
+                                <?php echo $row->nik; ?>
+                            </th>
+                            <th data-cell="Gender" class="text-center">
+                                <?php echo $row->gender; ?>
+                            </th>
+                            <th data-cell="Aksi" class="aksi">
+                                <a href="<?php echo base_url('admin/update_guru/') . $row->id ?>" type="button" id="PopoverCustomT-1" class="btn btn-success btn-sm edit">Edit</a>
+                                <button onclick="hapus(<?php echo $row->id ?>)" type="button" id="PopoverCustomT-1" class="btn btn-danger btn-sm hapus">Delete</button>
+                            </th>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <?php $no = 0;
-                        foreach ($result as $row) : $no++ ?>
-                            <tr>
-                                <th data-cell="No" class="text-center" scope="row">
-                                    <?php echo $no ?>
-                                </th>
-                                <th data-cell="Nama Guru" class="text-center">
-                                    <?php echo $row->nama_guru; ?>
-                                </th>
-                                <th data-cell="Nik" class="text-center">
-                                    <?php echo $row->nik; ?>
-                                </th>
-                                <th data-cell="Gender" class="text-center">
-                                    <?php echo $row->gender; ?>
-                                </th>
-                                <th data-cell="Aksi" class="aksi">
-                                    <a href="<?php echo base_url('admin/update_guru/') . $row->id ?>" type="button" id="PopoverCustomT-1" class="btn btn-success btn-sm edit">Edit</a>
-                                    <button onclick="hapus(<?php echo $row->id ?>)" type="button" id="PopoverCustomT-1" class="btn btn-danger btn-sm hapus">Delete</button>
-                                </th>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-                <a href="<?php echo base_url('admin/tambah_guru/') ?>" type="button" id="PopoverCustomT-1" class="btn btn-info btn-sm create">create</a>
-            </div>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+            <a href="<?php echo base_url('admin/tambah_guru/') ?>" type="button" id="PopoverCustomT-1" class="btn btn-info btn-sm create">create</a>
         </div>
+    </div>
     </div>
     <script>
         function hapus(id) {
-            var yes = confirm('Yakin di hapus?');
-            if (yes == true) {
-                window.location.href = "<?php echo base_url('admin/hapus_guru/') ?>" + id
-            }
+            swal.fire({
+                title: 'Yakin untuk menghapus data ini?',
+                text: "Data ini akan terhapus permanen",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                cancelButtonText: 'Batal',
+                confirmButtonText: 'Ya Hapus'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Berhasil Dihapus',
+                        showConfirmButton: false,
+                        timer: 1500,
+
+                    }).then(function() {
+                        window.location.href = "<?php echo base_url('admin/hapus_guru/') ?>" + id;
+                    });
+                }
+            });
         }
     </script>
 </body>

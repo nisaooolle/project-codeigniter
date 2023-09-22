@@ -593,7 +593,7 @@
     color: white;
   }
 </style>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <body class="body">
     <div class="sidebar">
         <div class="sidebar-brand">
@@ -735,7 +735,6 @@
         </div>
     </div>
     <script>
-        function hapus(id) {
             function hapus(id) {
         swal.fire({
             title: 'Yakin untuk menghapus data ini?',
@@ -760,8 +759,6 @@
             }
         });
     }
-
-        }
     </script>
 </body>
 
